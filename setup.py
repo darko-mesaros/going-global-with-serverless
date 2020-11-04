@@ -9,17 +9,22 @@ setuptools.setup(
     name="going_global_with_serverless",
     version="0.0.1",
 
-    description="An empty CDK Python app",
+    description="CDK code used for creating a global serverless application.",
     long_description=long_description,
     long_description_content_type="text/markdown",
 
-    author="author",
+    author="Darko Meszaros",
 
     package_dir={"": "going_global_with_serverless"},
     packages=setuptools.find_packages(where="going_global_with_serverless"),
 
     install_requires=[
         "aws-cdk.core==1.71.0",
+        "aws-cdk.aws-lambda==1.71.0",
+        "aws-cdk.aws-apigateway==1.71.0",
+        "aws-cdk.aws-dynamodb==1.71.0",
+        "aws-cdk.aws-route53==1.71.0",
+        "aws-cdk.aws-certificatemanager==1.71.0",
     ],
 
     python_requires=">=3.6",

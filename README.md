@@ -1,9 +1,25 @@
+# Going Global With Serverless Demo Repository
 
-# Welcome to your CDK Python project!
+Hello and welcome to this repository, I hope you have enjoyed the talk (or did
+you? 🤔). In any case, this repository contains the required CDK code to deploy
+the required elements of a global serverless application. 
 
-This is a blank project for Python development with CDK.
+If executed succesfully, this will deploy the following:
+- DynamoDB table (with Global tables in Ireland, Tokyo, and California)
+- 3 REST API Gateways (1 per region)
+- 6 Lambda Functions (2 per region)
+- Three Certificates in ACM (1 per region)
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+The only manual part of this demo is the Route53 creation - that was
+intentionally left out, as I wanted to demonstrate that during the demo (I may
+add that in the future). 
+
+There are a few things you need to change:
+- The domain name to be used - currently it is set to `rup12.net`
+- The account ID, currently I have it set to my own account.
+
+As this CDK project is written in python, make sure to use `virualenv` to
+install all the required modules.
 
 This project is set up like a standard Python project.  The initialization
 process also creates a virtualenv within this project, stored under the .env
@@ -37,22 +53,18 @@ Once the virtualenv is activated, you can install the required dependencies.
 $ pip install -r requirements.txt
 ```
 
-At this point you can now synthesize the CloudFormation template for this code.
+### Deploying
+
+To deploy the stack, you need to do it in order. After you have made all the
+necessary changes to your templates, create your DynamoDB stack first:
 
 ```
-$ cdk synth
+$ cdk deploy global-table-stack
 ```
 
-To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
-command.
+Then You can go ahead and deploy the rest of the stacks (You can do it one by
+one, or all at once, your call):
 
-## Useful commands
-
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
-
-Enjoy!
+```
+$ cdk deploy {ireland,japan,california}-stack -O outputs.json
+```
