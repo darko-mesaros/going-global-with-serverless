@@ -1,0 +1,14 @@
+{
+  "hosted-zone:account=824852318651:domainName=rup12.net:region=eu-west-1": {
+    "Id": "/hostedzone/Z2B2P3D7DHOU1P",
+    "Name": "rup12.net."
+  },
+  "hosted-zone:account=824852318651:domainName=rup12.net:region=ap-northeast-1": {
+    "Id": "/hostedzone/Z2B2P3D7DHOU1P",
+    "Name": "rup12.net."
+  },
+  "hosted-zone:account=824852318651:domainName=rup12.net:region=us-west-1": {
+    "Id": "/hostedzone/Z2B2P3D7DHOU1P",
+    "Name": "rup12.net."
+  }
+}

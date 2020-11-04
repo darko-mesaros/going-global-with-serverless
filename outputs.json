@@ -1,0 +1,14 @@
+{
+  "california-stack": {
+    "restapiEndpointC67DEFEA": "https://fvzry5acta.execute-api.us-west-1.amazonaws.com/prod/"
+  },
+  "global-table-stack": {
+    "ExportsOutputRefglobaltable7743DC8EB83354BD": "openit_globalddb_demo"
+  },
+  "japan-stack": {
+    "restapiEndpointC67DEFEA": "https://ff4apa7sgh.execute-api.ap-northeast-1.amazonaws.com/prod/"
+  },
+  "ireland-stack": {
+    "restapiEndpointC67DEFEA": "https://kga7xkmphi.execute-api.eu-west-1.amazonaws.com/prod/"
+  }
+}
